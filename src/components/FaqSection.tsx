@@ -25,116 +25,127 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ whatsappNumber }) => {
   };
 
   const whatsappClean = whatsappNumber.replace(/[^0-9]/g, '');
+  const directWhatsappUrl = `https://wa.me/${whatsappClean}?text=${encodeURIComponent("Bonjour Medium Manu, j'ai une question à vous poser.")}`;
 
   return (
-    <section id="faq" className="py-20 bg-[#08120F] relative border-t border-slate-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="faq" className="py-16 sm:py-20 lg:py-24 bg-base relative border-t border-section">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-4 mb-14">
-          <span className="text-xs uppercase tracking-widest text-[#C5A059] font-bold px-3 py-1 rounded-full bg-[#132A22] border border-[#C5A059]/30">
-            Transparence & Réponses Sans Tabou
+        <div className="text-center max-w-3xl mx-auto space-y-4 mb-10 sm:mb-14">
+          <span className="text-xs sm:text-sm uppercase tracking-widest text-gold font-bold px-3 py-1.5 rounded-full bg-card-2 border border-gold">
+            Questions Fréquentes
           </span>
-          <h2 className="font-serif-luxury text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
-            Foire Aux Questions <br />
-            <span className="text-gold-gradient">& Levée des Objections</span>
+          <h2 className="font-serif-luxury text-3xl sm:text-4xl lg:text-5xl font-bold text-main leading-tight">
+            Vos Questions, <br className="hidden sm:block" />
+            <span className="text-gold-gradient">Nos Réponses Claires</span>
           </h2>
-          <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-            Toutes les réponses à vos interrogations légitimes concernant la confidentialité, les délais, les paiements, le travail à distance et la déontologie.
+          <p className="text-sm sm:text-base text-soft leading-relaxed">
+            Vous hésitez encore ? Parcourez les questions les plus fréquemment posées par nos visiteurs internationaux.
           </p>
         </div>
 
-        {/* Search & Category Filter Controls */}
-        <div className="max-w-4xl mx-auto space-y-6 mb-12">
-          {/* Search Input */}
-          <div className="relative">
-            <Search className="w-5 h-5 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2" />
-            <input
-              type="text"
-              placeholder="Rechercher une question (ex: confidentialité, paiement, délai, voyance)..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full bg-[#0F261F] border border-slate-700 focus:border-[#C5A059] rounded-2xl pl-12 pr-4 py-3.5 text-sm text-white focus:outline-none shadow-lg placeholder:text-slate-500"
-            />
-          </div>
-
-          {/* Category Pills */}
-          <div className="flex flex-wrap items-center justify-center gap-2">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setSelectedCategory(cat)}
-                className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all border ${
-                  selectedCategory === cat
-                    ? 'bg-[#C5A059] text-[#08120F] border-[#C5A059] shadow-md'
-                    : 'bg-[#0F261F] text-slate-300 border-slate-800 hover:border-[#C5A059]/40'
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
+        {/* Search Input */}
+        <div className="relative mb-6 sm:mb-8">
+          <Search className="w-5 h-5 text-muted absolute left-4 top-1/2 -translate-y-1/2" />
+          <input
+            type="text"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            placeholder="Rechercher une question..."
+            className="w-full py-3.5 sm:py-4 pl-12 pr-4 rounded-xl bg-card border border-soft focus:border-gold text-sm text-main placeholder:text-muted outline-none transition-colors"
+          />
         </div>
 
-        {/* Accordion Questions List */}
-        <div className="max-w-4xl mx-auto space-y-4">
-          {filteredFaqs.length > 0 ? (
-            filteredFaqs.map((faq) => {
-              const isOpen = openId === faq.id;
-              return (
-                <div
-                  key={faq.id}
-                  className="glass-panel rounded-2xl overflow-hidden border-gold-glow transition-all"
-                >
-                  <button
-                    onClick={() => toggleAccordion(faq.id)}
-                    className="w-full p-6 text-left flex items-center justify-between gap-4 hover:bg-[#132A22]/50 transition-colors focus:outline-none"
-                  >
-                    <div className="flex items-center gap-3">
-                      <HelpCircle className="w-5 h-5 text-[#DFB86A] shrink-0" />
-                      <span className="font-serif-luxury text-lg sm:text-xl font-bold text-white">
-                        {faq.question}
-                      </span>
-                    </div>
-                    <div className={`p-1.5 rounded-full bg-slate-800 text-slate-300 transition-transform ${isOpen ? 'rotate-180 bg-[#C5A059] text-[#08120F]' : ''}`}>
-                      <ChevronDown className="w-4 h-4" />
-                    </div>
-                  </button>
+        {/* Category Filters */}
+        <div className="flex flex-wrap items-center justify-center gap-2 mb-8 sm:mb-10">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setSelectedCategory(cat)}
+              className={`px-3 sm:px-4 py-2 rounded-xl text-xs font-semibold transition-all border ${
+                selectedCategory === cat
+                  ? 'bg-gradient-to-r from-[#DFB86A] to-[#C5A059] text-main border-[#C5A059] shadow-md'
+                  : 'bg-card text-soft border-soft hover:border-gold hover:text-main'
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
 
-                  {isOpen && (
-                    <div className="px-6 pb-6 pt-2 border-t border-slate-800/80 text-xs sm:text-sm text-slate-300 leading-relaxed space-y-3 animate-fadeIn">
-                      <p className="bg-[#08120F]/60 p-4 rounded-xl border border-slate-800/80">
-                        {faq.answer}
-                      </p>
-                      
-                      <div className="flex items-center justify-between text-[11px] text-slate-400">
-                        <span className="text-[#C5A059]">Catégorie : {faq.category}</span>
-                        <a
-                          href={`https://wa.me/${whatsappClean}?text=${encodeURIComponent(`Bonjour Medium Manu, j'ai une précision concernant la question : "${faq.question}"`)}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-[#25D366] hover:underline flex items-center gap-1 font-semibold"
-                        >
-                          <MessageCircle className="w-3.5 h-3.5 fill-current" />
-                          <span>Poser cette question sur WhatsApp</span>
-                        </a>
-                      </div>
-                    </div>
-                  )}
-                </div>
-              );
-            })
-          ) : (
-            <div className="text-center py-12 text-slate-400 space-y-2">
-              <p className="text-base font-semibold">Aucune question ne correspond à votre recherche.</p>
+        {/* FAQ Items */}
+        <div className="space-y-3 sm:space-y-4">
+          {filteredFaqs.map((faq, idx) => (
+            <div
+              key={faq.id}
+              className="premium-card rounded-2xl overflow-hidden animate-fadeInUp"
+              style={{ animationDelay: `${idx * 0.05}s` }}
+            >
               <button
-                onClick={() => { setSearchTerm(''); setSelectedCategory('Toutes'); }}
-                className="text-xs text-[#DFB86A] underline"
+                onClick={() => toggleAccordion(faq.id)}
+                className="w-full px-5 sm:px-6 py-4 sm:py-5 flex items-center justify-between gap-4 text-left"
               >
-                Réinitialiser la recherche
+                <span className="font-serif-luxury text-base sm:text-lg font-bold text-main">
+                  {faq.question}
+                </span>
+                <div className={`shrink-0 p-1.5 rounded-lg bg-icon border border-gold text-gold transition-transform ${
+                  openId === faq.id ? 'rotate-180' : ''
+                }`}>
+                  <ChevronDown className="w-4 h-4" />
+                </div>
               </button>
+
+              {openId === faq.id && (
+                <div className="px-5 sm:px-6 pb-5 sm:pb-6 space-y-3 animate-fadeIn">
+                  <p className="text-sm text-soft leading-relaxed">
+                    {faq.answer}
+                  </p>
+
+                  <div className="flex items-center gap-2 pt-2 border-t border-soft/60">
+                    <span className="text-xs text-muted">Besoin de plus de précisions ?</span>
+                    <a
+                      href={`https://wa.me/${whatsappClean}?text=${encodeURIComponent(`Bonjour Medium Manu, j'ai une question concernant : "${faq.question}"`)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-xs font-bold text-[#25D366] hover:text-[#20BA5C]"
+                    >
+                      <MessageCircle className="w-3.5 h-3.5 fill-current" />
+                      <span>Demander sur WhatsApp</span>
+                    </a>
+                  </div>
+                </div>
+              )}
             </div>
-          )}
+          ))}
+        </div>
+
+        {filteredFaqs.length === 0 && (
+          <div className="text-center py-12 text-muted space-y-3">
+            <p className="text-base font-semibold">Aucune question ne correspond à votre recherche.</p>
+            <button
+              onClick={() => { setSearchTerm(''); setSelectedCategory('Toutes'); }}
+              className="text-xs text-gold underline"
+            >
+              Réinitialiser la recherche
+            </button>
+          </div>
+        )}
+
+        {/* Bottom CTA */}
+        <div className="mt-10 sm:mt-14 text-center space-y-4 max-w-xl mx-auto p-6 rounded-2xl bg-card border border-gold">
+          <p className="text-sm text-soft">
+            Vous ne trouvez pas réponse à votre question ?
+          </p>
+          <a
+            href={directWhatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-premium inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#25D366] text-main font-bold text-xs sm:text-sm uppercase tracking-wider shadow-lg"
+          >
+            <MessageCircle className="w-4 h-4 fill-current" />
+            <span>Poser ma question sur WhatsApp</span>
+          </a>
         </div>
 
       </div>

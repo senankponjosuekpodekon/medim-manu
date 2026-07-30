@@ -23,43 +23,44 @@ export const ProblemsSolutionsSection: React.FC<ProblemsSolutionsSectionProps> =
   const whatsappClean = whatsappNumber.replace(/[^0-9]/g, '');
 
   return (
-    <section className="py-20 bg-[#060E0C] relative border-t border-slate-900">
+    <section className="py-16 sm:py-20 lg:py-24 bg-alt relative border-t border-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-4 mb-14">
-          <span className="text-xs uppercase tracking-widest text-[#C5A059] font-bold px-3 py-1 rounded-full bg-[#132A22] border border-[#C5A059]/30">
-            Comprendre Vos Douleurs & Vos Besoins
+        <div className="text-center max-w-3xl mx-auto space-y-4 mb-12 sm:mb-14">
+          <span className="text-xs sm:text-sm uppercase tracking-widest text-gold font-bold px-3 py-1.5 rounded-full bg-card-2 border border-gold">
+            Comprendre Votre Situation
           </span>
-          <h2 className="font-serif-luxury text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
-            Quelle Situation Traversez-Vous <br />
+          <h2 className="font-serif-luxury text-3xl sm:text-4xl lg:text-5xl font-bold text-main leading-tight">
+            Quelle Situation Traversez-Vous <br className="hidden sm:block" />
             <span className="text-gold-gradient">En Ce Moment ?</span>
           </h2>
-          <p className="text-sm sm:text-base text-slate-300">
-            Chaque épreuve de la vie possède une cause visible et une racine invisible. Identifiez le problème qui vous pèse pour découvrir la réponse traditionnelle appropriée.
+          <p className="text-sm sm:text-base text-soft leading-relaxed">
+            Chaque épreuve possède une cause visible et une racine invisible. Identifiez le problème qui vous pèse pour découvrir la réponse traditionnelle appropriée.
           </p>
         </div>
 
         {/* Tab Selector Buttons */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-10">
+        <div className="flex flex-wrap items-center justify-center gap-2 mb-8 sm:mb-10">
           {PROBLEMS_SOLUTIONS.map((item) => (
             <button
               key={item.id}
               onClick={() => setActiveTab(item.id)}
-              className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 border ${
+              className={`px-3 sm:px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 border ${
                 activeTab === item.id
-                  ? 'bg-gradient-to-r from-[#DFB86A] to-[#C5A059] text-[#08120F] border-[#C5A059] shadow-lg shadow-[#C5A059]/20'
-                  : 'bg-[#0F261F] text-slate-300 border-slate-800 hover:border-[#C5A059]/40 hover:text-white'
+                  ? 'bg-gradient-to-r from-[#DFB86A] to-[#C5A059] text-main border-[#C5A059] shadow-lg shadow-[#C5A059]/20'
+                  : 'bg-card text-soft border-soft hover:border-gold hover:text-main'
               }`}
             >
               {getIcon(item.iconName)}
-              <span>{item.category}</span>
+              <span className="hidden sm:inline">{item.category}</span>
+              <span className="sm:hidden">{item.category.split(' ')[0]}</span>
             </button>
           ))}
         </div>
 
         {/* Problem - Solution Comparison Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
           {PROBLEMS_SOLUTIONS.filter(item => item.id === activeTab).map((item) => {
             const specificMsg = `Bonjour Medium Manu, je me reconnais dans la situation : "${item.problemTitle}". J'aimerais échanger avec vous pour trouver une solution.`;
             const itemWhatsappUrl = `https://wa.me/${whatsappClean}?text=${encodeURIComponent(specificMsg)}`;
@@ -68,40 +69,40 @@ export const ProblemsSolutionsSection: React.FC<ProblemsSolutionsSectionProps> =
               <React.Fragment key={item.id}>
                 
                 {/* Problem Side (Col 6) */}
-                <div className="lg:col-span-6 bg-[#18110D] border border-amber-900/40 rounded-3xl p-8 space-y-6 flex flex-col justify-between shadow-xl">
+                <div className="lg:col-span-6 bg-card border border-amber-themed rounded-3xl p-6 sm:p-8 space-y-5 flex flex-col justify-between shadow-xl animate-fadeInUp">
                   <div className="space-y-4">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-950/80 border border-amber-800/50 text-amber-300 text-xs font-bold uppercase tracking-wider">
-                      <AlertCircle className="w-3.5 h-3.5 text-amber-400" />
-                      <span>Le Problème Constaté</span>
+                    <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-themed border border-amber-themed text-gold text-xs font-bold uppercase tracking-wider">
+                      <AlertCircle className="w-3.5 h-3.5 text-gold" />
+                      <span>Le Problème</span>
                     </div>
 
-                    <h3 className="font-serif-luxury text-2xl sm:text-3xl font-bold text-amber-100 leading-snug">
+                    <h3 className="font-serif-luxury text-xl sm:text-2xl lg:text-3xl font-bold text-amber-themed leading-snug">
                       {item.problemTitle}
                     </h3>
 
-                    <p className="text-sm text-slate-300 leading-relaxed">
+                    <p className="text-sm text-soft leading-relaxed">
                       {item.problemDescription}
                     </p>
                   </div>
 
-                  <div className="p-4 rounded-xl bg-[#0F0B08] border border-amber-950 text-xs text-amber-200/80 leading-relaxed italic">
+                  <div className="p-4 rounded-xl bg-base border border-amber-themed text-xs sm:text-sm text-amber-themed/80 leading-relaxed italic">
                     "Ces symptômes entraînent souvent un sentiment d'isolement, de la fatigue morale et une incertitude pesante au quotidien."
                   </div>
                 </div>
 
                 {/* Solution Side (Col 6) */}
-                <div className="lg:col-span-6 bg-[#0F261F] border border-[#C5A059]/40 rounded-3xl p-8 space-y-6 flex flex-col justify-between shadow-xl gold-glow">
+                <div className="lg:col-span-6 bg-card border border-gold rounded-3xl p-6 sm:p-8 space-y-5 flex flex-col justify-between shadow-xl gold-glow animate-fadeInUp delay-200">
                   <div className="space-y-4">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#132A22] border border-[#C5A059]/50 text-[#DFB86A] text-xs font-bold uppercase tracking-wider">
+                    <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-card-2 border border-gold text-gold text-xs font-bold uppercase tracking-wider">
                       <Sparkles className="w-3.5 h-3.5" />
-                      <span>La Réponse Traditionnelle du Bénin</span>
+                      <span>La Solution Traditionnelle</span>
                     </div>
 
-                    <h3 className="font-serif-luxury text-2xl sm:text-3xl font-bold text-white leading-snug">
+                    <h3 className="font-serif-luxury text-xl sm:text-2xl lg:text-3xl font-bold text-main leading-snug">
                       {item.solutionTitle}
                     </h3>
 
-                    <p className="text-sm text-slate-300 leading-relaxed">
+                    <p className="text-sm text-soft leading-relaxed">
                       {item.solutionDescription}
                     </p>
                   </div>
@@ -111,10 +112,10 @@ export const ProblemsSolutionsSection: React.FC<ProblemsSolutionsSectionProps> =
                       href={itemWhatsappUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full py-4 rounded-xl bg-gradient-to-r from-[#25D366] to-[#128C7E] text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg shadow-[#25D366]/20 hover:scale-[1.02] transition-all"
+                      className="btn-premium w-full py-4 rounded-xl bg-gradient-to-r from-[#25D366] to-[#128C7E] text-main font-bold text-xs sm:text-sm uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg shadow-[#25D366]/20"
                     >
                       <MessageCircle className="w-4 h-4 fill-current" />
-                      <span>Soumettre ce problème à Medium Manu sur WhatsApp</span>
+                      <span>Parler de ce problème sur WhatsApp</span>
                     </a>
                   </div>
                 </div>
@@ -125,24 +126,24 @@ export const ProblemsSolutionsSection: React.FC<ProblemsSolutionsSectionProps> =
         </div>
 
         {/* All Categories Quick List */}
-        <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+        <div className="mt-10 sm:mt-14 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
           {PROBLEMS_SOLUTIONS.map((ps) => (
             <button
               key={ps.id}
               onClick={() => setActiveTab(ps.id)}
               className={`p-4 rounded-2xl border text-left transition-all space-y-2 ${
                 activeTab === ps.id
-                  ? 'bg-[#132A22] border-[#C5A059] text-white'
-                  : 'bg-[#08120F] border-slate-800 text-slate-400 hover:text-slate-200'
+                  ? 'bg-card-2 border-[#C5A059] text-main'
+                  : 'bg-base border-soft text-muted hover:text-soft'
               }`}
             >
-              <div className="text-[#DFB86A]">
+              <div className="text-gold">
                 {getIcon(ps.iconName)}
               </div>
-              <p className="text-xs font-bold text-white">
+              <p className="text-xs font-bold text-main">
                 {ps.category}
               </p>
-              <p className="text-[11px] text-slate-400 line-clamp-2">
+              <p className="text-xs text-muted line-clamp-2">
                 {ps.solutionTitle}
               </p>
             </button>

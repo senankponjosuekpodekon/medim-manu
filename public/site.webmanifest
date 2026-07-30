@@ -1,0 +1,24 @@
+{
+  "name": "Medium Manu — Guide Spirituel Traditionnel du Bénin",
+  "short_name": "Medium Manu",
+  "description": "Accompagnement spirituel traditionnel : retour affectif, déblocage, protection et voyance Fá.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#08120F",
+  "theme_color": "#08120F",
+  "lang": "fr",
+  "icons": [
+    {
+      "src": "/favicon.jpeg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon.jpeg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any"
+    }
+  ]
+}

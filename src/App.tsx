@@ -14,12 +14,11 @@ import { FinalCtaSection } from './components/FinalCtaSection';
 import { Footer } from './components/Footer';
 import { WhatsAppFloatingWidget } from './components/WhatsAppFloatingWidget';
 import { BookingModal } from './components/BookingModal';
-import { ElementorGuideModal } from './components/ElementorGuideModal';
 import { LegalModal } from './components/LegalModal';
 import { ModalType } from './types';
 
 export default function App() {
-  const [whatsappNumber, setWhatsappNumber] = useState<string>('+229 97 00 00 00');
+  const whatsappNumber = '+229 01 62 68 24 03';
   const [activeModal, setActiveModal] = useState<ModalType>(null);
 
   const handleOpenModal = (type: ModalType) => {
@@ -31,12 +30,11 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#08120F] text-[#E2E8F0] font-sans-clean selection:bg-[#C5A059] selection:text-[#08120F]">
+    <div className="min-h-screen font-sans-clean selection:bg-[#C5A059] selection:text-[#08120F]" style={{ backgroundColor: 'var(--c-bg-base)', color: 'var(--c-text-soft)' }}>
       
       {/* Navigation Header */}
       <Header
         whatsappNumber={whatsappNumber}
-        onUpdateWhatsappNumber={setWhatsappNumber}
         onOpenModal={handleOpenModal}
       />
 
@@ -109,12 +107,6 @@ export default function App() {
       {activeModal === 'booking' && (
         <BookingModal
           whatsappNumber={whatsappNumber}
-          onClose={handleCloseModal}
-        />
-      )}
-
-      {activeModal === 'elementorGuide' && (
-        <ElementorGuideModal
           onClose={handleCloseModal}
         />
       )}

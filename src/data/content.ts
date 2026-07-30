@@ -6,17 +6,17 @@ import portraitImgPath from '../assets/images/medium_manu_portrait_1785340225300
 import artifactsImgPath from '../assets/images/benin_tradition_artifacts_1785340239400.jpg';
 
 export const HERO_CONTENT = {
-  badge: "Héritage Ancestral du Bénin • Consultations Privées Internationales",
-  h1Title: "Accompagnement Spirituel Traditionnel & Guidance Ancestrale du Bénin",
-  subtitle: "Retrouvez la sérénité, débloquez votre chemin de vie et restaurez l'harmonie sentimentale ou financière grâce à la sagesse sacrée transmise de génération en génération par Medium Manu.",
+  badge: "Praticien Traditionnel Reconnu • Plus de 500 personnes accompagnées",
+  h1Title: "Medium Manu — Guide Spirituel du Bénin",
+  subtitle: "Retour affectif, déblocage spirituel, protection et voyance Fá. Une sagesse ancestrale millénaire au service de votre sérénité — où que vous soyez dans le monde.",
   trustArguments: [
-    { title: "Consultation Confidentielle", desc: "Échanges privés 100% sécurisés via WhatsApp." },
-    { title: "Authenticité Garantie", desc: "Ritualité traditionnelle pratiquée au cœur du Bénin." },
-    { title: "Accompagnement International", desc: "Suivi personnalisé pour la France, Belgique, Suisse, Canada & USA." },
-    { title: "Éthique & Bienveillance", desc: "Respect des lois naturelles, sans fausses promesses." }
+    { title: "100% Confidentiel", desc: "Vos échanges restent privés. Aucune fuite, aucun jugement." },
+    { title: "Authenticité Béninoise", desc: "Rituels pratiqués au sanctuaire ancestral de Ouidah." },
+    { title: "Accompagnement International", desc: "France, Belgique, Suisse, Canada, USA, Afrique, Antilles." },
+    { title: "Sans Fausses Promesses", desc: "Une démarche honnête, transparente et éthique." }
   ],
-  ctaPrimary: "Discuter directement sur WhatsApp",
-  ctaSecondary: "Réserver une consultation privée",
+  ctaPrimary: "Écrire sur WhatsApp maintenant",
+  ctaSecondary: "Réserver une consultation",
   heroImage: heroImgPath,
   imageAlt: "Autel ancestral traditionnel au Bénin illuminé par une lumière dorée"
 };
@@ -25,32 +25,32 @@ export const WHY_CHOOSE_MANU = [
   {
     icon: "Crown",
     title: "Héritage Ancestral Authentique",
-    description: "Issu d'une lignée respectée de praticiens traditionnels du Bénin, Medium Manu a reçu l'initiation sacrée et les secrets des plantes, prières et rituels transmis par les grands dignitaires du Vodun."
+    description: "Issu d'une lignée de praticiens du Bénin, Medium Manu a reçu l'initiation sacrée et les secrets des plantes, prières et rituels transmis par les dignitaires du Vodun."
   },
   {
     icon: "ShieldCheck",
-    title: "Confidentialité & Discrétion Absolue",
-    description: "Vos données, photos, histoires de vie et secrets personnels sont traités dans un sanctuaire de discrétion totale. Rien n'est jamais divulgué ni partagé à des tiers."
+    title: "Confidentialité Absolue",
+    description: "Vos données, photos et histoires de vie sont traités dans une discrétion totale. Rien n'est jamais divulgué ni partagé à un tiers."
   },
   {
     icon: "Sparkles",
-    title: "Accompagnement 100% Sur-Mesure",
-    description: "Chaque être humain est unique. Aucune solution générique n'est appliquée : une consultation préalable détermine avec précision la nature exacte de votre situation avant toute action."
+    title: "Accompagnement Sur-Mesure",
+    description: "Chaque personne est unique. Une consultation préalable identifie la nature exacte de votre situation avant toute action. Aucune solution générique."
   },
   {
     icon: "HeartHandshake",
-    title: "Respect Strict des Valeurs Humaines",
-    description: "Ici, vous trouverez une écoute attentive sans aucun jugement. Le travail est accompli avec sincérité, humilité et profond respect de vos croyances et de votre dignité."
+    title: "Écoute Sans Jugement",
+    description: "Vous trouverez ici une écoute attentive et bienveillante. Le travail est accompli avec sincérité, humilité et profond respect de votre dignité."
   },
   {
     icon: "Globe2",
-    title: "Expertise Internationale Réputée",
-    description: "De la France au Canada, en passant par la Belgique, la Suisse et l'Afrique de l'Ouest, des centaines de personnes bénéficient d'un accompagnement à distance fluide et structuré."
+    title: "Reconnu à l'International",
+    description: "France, Belgique, Suisse, Canada, USA, Antilles, Afrique — plus de 500 personnes accompagnées à distance avec un suivi fluide et structuré."
   },
   {
     icon: "ScrollText",
-    title: "Déontologie & Responsabilité",
-    description: "Pas de promesses irréalistes ni de discours sensationnalistes. Une démarche transparente, mesurée et guidée par la recherche d'un apaisement durable et d'une réelle harmonie."
+    title: "Éthique & Transparence",
+    description: "Pas de promesses irréalistes ni de sensationnalisme. Une démarche mesurée, guidée par la recherche d'un apaisement durable et d'une vraie harmonie."
   }
 ];
 
@@ -538,53 +538,31 @@ export const FAQS: FaqItem[] = [
 ];
 
 export const FINAL_CTA = {
-  h2Title: "Ne Restez Plus Seul(e) Face à Vos Épreuves",
-  paragraph: "Chaque problème porte en lui la graine de sa solution. Que vous traversiez une tempête amoureuse, un blocage financier ou une période de doutes profonds, un échange bienveillant et discret peut transformer votre destin.",
-  primaryButton: "Écrire directement à Medium Manu sur WhatsApp",
-  secondaryButton: "Réserver ma séance de consultation",
-  guarantees: ["Réponse sous quelques heures", "Échange privé & sans engagement", "Écoute humaine et bienveillante"]
+  h2Title: "Vous N'êtes Plus Seul(e) Face à Vos Épreuves",
+  paragraph: "Chaque problème porte en lui sa solution. Tempête amoureuse, blocage financier, doutes profonds — un simple message peut tout changer. Medium Manu vous répond personnellement, avec bienveillance et sans jugement.",
+  primaryButton: "Écrire à Medium Manu sur WhatsApp",
+  secondaryButton: "Réserver ma consultation",
+  guarantees: ["Réponse en quelques heures", "Échange privé & sans engagement", "Écoute humaine et bienveillante"]
 };
 
 export const FOOTER_CONTENT = {
   brandName: "Medium Manu",
   tagline: "Guide Spirituel & Praticien Traditionnel du Bénin",
   address: "Sanctuaire Ancestral, Cotonou - Ouidah, République du Bénin",
-  email: "contact@mediummanu-benin.com",
-  phoneDisplay: "+229 97 00 00 00", // Default display
+  email: "contact@medium-manu.com",
+  phoneDisplay: "+229 01 62 68 24 03",
+  callNumber: "+229 01 42 48 42 67",
+  whatsappQrUrl: "https://wa.me/qr/S5Z7LXVIBQPSC1",
+  facebookUrl: "https://www.facebook.com/profile.php?id=61592303896034",
   copyright: `© ${new Date().getFullYear()} Medium Manu. Tous droits réservés. Guidance & Traditions du Bénin.`,
-  disclaimer: "Avertissement éthique : L'accompagnement spirituel traditionnel proposé sur ce site vient en complément de votre épanouissement personnel et ne remplace en aucun cas un avis médical, psychologique ou juridique professionnel.",
+  disclaimer: "L'accompagnement spirituel traditionnel proposé sur ce site vient en complément de votre épanouissement personnel et ne remplace en aucun cas un avis médical, psychologique ou juridique professionnel.",
   quickLinks: [
     { label: "Accueil", href: "#hero" },
     { label: "Pourquoi Medium Manu", href: "#pourquoi" },
-    { label: "Nos Accompagnements", href: "#accompagnements" },
+    { label: "Accompagnements", href: "#accompagnements" },
     { label: "Processus & Étapes", href: "#processus" },
     { label: "Le Vodun du Bénin", href: "#heritage" },
-    { label: "Témoignages Client", href: "#temoignages" },
-    { label: "FAQ & Réponses", href: "#faq" }
+    { label: "Témoignages", href: "#temoignages" },
+    { label: "FAQ", href: "#faq" }
   ]
-};
-
-// SEO & Elementor Integration Data
-export const ELEMENTOR_SEO_MAP = {
-  seo: {
-    metaTitle: "Medium Manu | Guidance Spirituelle Traditionnelle du Bénin",
-    metaDescription: "Accompagnement spirituel traditionnel au Bénin : retour affectif, déblocage, protection et voyance Fá. Consultations privées WhatsApp pour la France, Belgique, Suisse, Canada & USA.",
-    h1Text: "Accompagnement Spirituel Traditionnel & Guidance Ancestrale du Bénin",
-    keywords: "medium manu, retour affectif benin, deblocage spirituel, marabout benin serieux, voyance fa, protection spirituelle, vodun ouidah benin",
-    canonicalUrl: "https://mediummanu-benin.com/",
-    ogImage: heroImgPath
-  },
-  colorPaletteHex: [
-    { name: "Night Emerald (Fond)", hex: "#08120F" },
-    { name: "Deep Forest (Cards)", hex: "#0F261F" },
-    { name: "Antique Gold (Accents)", hex: "#C5A059" },
-    { name: "Light Gold (Glow)", hex: "#DFB86A" },
-    { name: "Warm Silver (Text)", hex: "#E2E8F0" },
-    { name: "WhatsApp Green", hex: "#25D366" }
-  ],
-  typography: {
-    headings: "Cormorant Garamond (Serif, 700 / 600)",
-    body: "Plus Jakarta Sans (Sans-serif, 400 / 500)",
-    subheadings: "Cinzel / Cormorant Garamond"
-  }
 };

@@ -1,0 +1,38 @@
+# Medium Manu — Guide Spirituel Traditionnel du Bénin
+
+## Site
+- URL: https://medium-manu.com/
+- Langue: Français
+- Localisation: Cotonou - Ouidah, Bénin
+
+## Services
+- Retour affectif
+- Déblocage spirituel
+- Protection spirituelle
+- Purification
+- Voyance Fá
+- Consultation spirituelle
+
+## Contact
+- WhatsApp: +229 01 62 68 24 03
+- Appel: +229 01 42 48 42 67
+- WhatsApp QR: https://wa.me/qr/S5Z7LXVIBQPSC1
+- Facebook: https://www.facebook.com/profile.php?id=61592303896034
+- Email: contact@medium-manu.com
+
+## Zones desservies
+France, Belgique, Suisse, Canada, USA, Afrique, Antilles
+
+## Stack technique
+- React + TypeScript
+- Vite
+- Tailwind CSS v4
+- 3 thèmes: Nuit Sacrée (sombre), Aube Dorée (clair), Savane Royale (chaud)
+
+## Structure
+- Header avec navigation, ThemeSwitcher, CTA WhatsApp
+- Hero section avec image et call-to-action
+- Sections: Pourquoi choisir, Problèmes & Solutions, Accompagnements, Processus, Héritage Vodun, À propos, Témoignages, Galerie, FAQ, CTA final
+- Footer avec liens, contact, mentions légales
+- Widget WhatsApp flottant
+- Modal de réservation
