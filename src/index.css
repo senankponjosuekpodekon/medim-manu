@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .font-serif-luxury {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+  .font-sans-clean {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+}
+
+/* Custom Luxury Styling */
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  background-color: #08120F;
+  color: #E2E8F0;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #060E0C;
+}
+::-webkit-scrollbar-thumb {
+  background: #253D35;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C5A059;
+}
+
+/* Gold Text Gradients */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 50%, #AA771C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gold-light {
+  color: #E2C783;
+}
+
+.bg-gold-gradient {
+  background: linear-gradient(135deg, #DFB86A 0%, #C5A059 50%, #9E7A31 100%);
+}
+
+.border-gold-glow {
+  border-color: rgba(197, 160, 89, 0.25);
+  box-shadow: 0 0 20px rgba(197, 160, 89, 0.08);
+}
+
+.gold-glow {
+  box-shadow: 0 0 35px rgba(197, 160, 89, 0.15);
+}
+
+/* Glassmorphism */
+.glass-panel {
+  background: rgba(15, 31, 25, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(197, 160, 89, 0.15);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s ease;
+}
+.glass-panel-hover:hover {
+  background: rgba(22, 44, 36, 0.85);
+  border-color: rgba(197, 160, 89, 0.35);
+  transform: translateY(-2px);
+}

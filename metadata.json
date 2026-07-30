@@ -1,0 +1,6 @@
+{
+  "name": "Medium Manu - Accompagnement Spirituel du Bénin",
+  "description": "Plateforme web premium et accompagnement spirituel traditionnel par Medium Manu au Bénin. Consultations privées, déblocage, purification et guidance.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
