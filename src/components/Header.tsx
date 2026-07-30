@@ -51,7 +51,7 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Logo Brand */}
           <a href="#hero" className="flex items-center gap-3 group">
             <img
-              src="/src/assets/images/logo.jpeg"
+              src="/favicon.jpeg"
               alt="Medium Manu"
               className="w-11 h-11 rounded-full object-cover shadow-lg group-hover:scale-105 transition-transform"
             />

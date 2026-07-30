@@ -27,7 +27,7 @@ export const Footer: React.FC<FooterProps> = ({ whatsappNumber, onOpenModal }) =
           <div className="lg:col-span-5 space-y-4">
             <div className="flex items-center gap-3">
               <img
-                src="/src/assets/images/logo.jpeg"
+                src="/favicon.jpeg"
                 alt="Medium Manu"
                 className="w-11 h-11 rounded-full object-cover shadow-md"
               />
